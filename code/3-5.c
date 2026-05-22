@@ -8,9 +8,15 @@ int main(int argc, const char* argv[]) {
         return 0;
     }
 
-
-    int sum = 0;
-
+int sum = 0, val;
+char buffer[256];
+while (fscanf(fp, "%s", buffer) != EOF) {
+    if (sscanf(buffer, "%d", &val) == 1) { 
+        sum += val;
+    } else { 
+        fprintf(stderr, "invalid input %s\n", buffer);
+    }
+}
 
     printf("sum: %d\n", sum);
     fclose(fp);
