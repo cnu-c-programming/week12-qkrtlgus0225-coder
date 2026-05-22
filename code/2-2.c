@@ -11,10 +11,8 @@ int main(int argc, const char* argv[]) {
     int count = 0;
     Student students[64];
 
-    int sum = 0;
+ 
     while (fscanf(fp, "%s %d", students[count].name, &students[count].score) != EOF) {
-        if (students[count].score > max) max = students[count].score;
-        sum += students[count].score;
         count++;
 }
 
@@ -22,9 +20,18 @@ int main(int argc, const char* argv[]) {
 
     int max = 0;
     float avg = 0;
+    int sum = 0;
 
-    float avg = count > 0 ? (float)sum / count : 0;
+  for (int i = 0; i < count; i++) {
+        if (students[i].score > max) {
+            max = students[i].score;
+        }
+        sum += students[i].score;
+    }
 
+    if (count > 0) {
+        avg = (float)sum / count;
+    }
 
 
     printf("max: %d\n", max);
