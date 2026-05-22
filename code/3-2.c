@@ -14,7 +14,7 @@ int main(int argc, const char* argv[]) {
     fscanf(fp, "%s", buffer);
     fclose(fp);
 
-    printf("%%s\n", buffer);
+    printf("%s\n", buffer);
 
 
     return 0;
